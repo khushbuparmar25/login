@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login-register.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+</head>
+<body >
+  <form method='POST' action='/login' class="row g-3 component-login">
+    <div>
+      <% for(i=0;i<errors.length; i++){ %>
+        <div class="header1">  <%= errors[i]%> </div>  
+      <% }%>
+    <h1 class="header">LogIn</h1>
+  </div>
+      <div class="p-0 col-12">
+        <input type="text" class="form-control input-field" id="username" name="username" placeholder="Username" required>
+      </div>
+      <div class="p-0 col-12">
+        <input type="password" class="form-control input-field" id="inputPassword4" name="password" placeholder="Password" required>
+      </div>
+      <div class="p-0 col-12">
+        <button type="submit" class="btn btn-primary login-btn">Log in</button>
+      </div>
+      <div class="p-0 col-12">
+        <div class="form-check input-name">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Remember me
+          </label>
+        </div>
+      </div>
+      <div>Don't have an account? <a class="register" href="register">Register here</a></div>
+    </form>
+</body>
+</html>

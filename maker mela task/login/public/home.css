@@ -1,0 +1,21 @@
+.home_container {
+    width:100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+  
+.home_child {
+    justify-self: center;
+	align-self: center;
+	margin: auto;
+    font-size:25px;
+    font-weight:600;
+}
+.home_child2 {
+    color:white !important;
+    padding:10px 8px !important;
+    margin:15px 0 0 130px;
+    font-weight: 500 !important;
+  }

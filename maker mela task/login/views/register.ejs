@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login-register.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Register</title>
+</head>
+<body >
+    <form method='POST' action='/register' class="row g-3 component-register">
+      
+        <h1 class="header">Register</h1>
+        <div class="p-0 col-12">
+          <!-- <label for="inputEmail4" class="form-label input-name">Email*</label> -->
+          <input type="text" name='email' class="form-control input-field" id="inputEmail4" placeholder="Email" required>
+        </div>
+        <div class="p-0 col-12">
+            <!-- <label class="visually-hidden input-name" for="specificSizeInputGroupUsername">Username*</label> -->
+            <input type="text" name='username' class="form-control input-field" id="specificSizeInputGroupUsername" placeholder="Username" required>
+        </div>
+        <div class="p-0 col-12">
+          <!-- <label for="inputPassword4" class="form-label input-name">Password*</label> -->
+          <input type="password" name='password' id="password" class="form-control input-field" placeholder="Password" required>
+        </div>
+        <div class="p-0 col-12">
+            <!-- <label for="inputPassword4" class="form-label input-name">Confirm Password*</label> -->
+            <input type="password" name='cpassword' id="cpassword" class="form-control input-field" placeholder="Conform Password" required>
+          </div>
+        <div class="p-0 col-12">
+          <button type="submit" class="btn btn-primary login-btn" value="submit" type="submit">Register</button>
+        </div>
+        <div >Already have an account? <a class="register" href="/">LogIn here</a></div>
+        <% if(locals.message){ %>
+          <div class="flash-danger-message" role="alert">
+            <%=message.danger%>
+          </div>
+          <div class="flash-success-message" role="alert">
+            <%=message.success%>
+          </div>
+        <% } %>      
+      </form>
+      
+    </body>
+</html>
