@@ -38,7 +38,6 @@ app.use(session({
     saveUninitialized:true
 }))
 
-
 app.use(require('connect-flash')());
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
@@ -61,10 +60,6 @@ app.get('/register', (req, res)=>{
 
 app.get('/login', (req, res)=>{
     res.render('login');
-});
-
-app.get('/home', (req, res)=>{
-    res.render('home');
 });
 
 app.post('/register', async (req, res)=>{
@@ -109,6 +104,24 @@ app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
   });
+
+  app.get('/home', (req, res)=>{
+    
+        
+    if(!req.user){
+        req.flash('danger', 'Not authorized');
+        res.redirect('/');
+    }else{
+        if(err){
+            console.log(err);
+
+        } else{
+            res.render('home', {
+            username: req.user.username                
+        });   
+        }} 
+        
+    });
 
 app.listen(8001, ()=>{
 console.log('server started on port 8001');
