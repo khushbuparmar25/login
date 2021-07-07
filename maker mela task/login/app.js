@@ -112,16 +112,12 @@ app.get('/logout', (req, res) => {
         req.flash('danger', 'Not authorized');
         res.redirect('/');
     }else{
-        if(err){
-            console.log(err);
-
-        } else{
             res.render('home', {
             username: req.user.username                
         });   
         }} 
         
-    });
+    );
 
 app.listen(8001, ()=>{
 console.log('server started on port 8001');
